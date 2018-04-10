@@ -1,0 +1,17 @@
+.navigation-component{
+    width: 250px;
+    height: 100%;
+    background-color: #502E6A;
+    border-style:solid;
+    border-color: #502E6A;
+    padding-top: 10px;
+    text-align: left;
+}
+img {
+    width:80%;
+    height:50%;
+    margin: auto;
+    display:block;
+    padding: 10px
+    
+}

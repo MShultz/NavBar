@@ -1,0 +1,11 @@
+<div (click)=onParentClick(NavItem) class="item" [style.backgroundColor] = "NavItem.isOpen ? color.open : color.closed">
+<i class="material-icons bar">{{NavItem.iconName}}</i>
+<p class="bar">{{NavItem.title}}</p>
+<div class="bar" *ngIf="NavItem.children && NavItem.children.length > 0">
+  <i *ngIf="!NavItem.isOpen; else open" class="material-icons arrow">keyboard_arrow_down</i>
+<ng-template #open><i class="material-icons arrow">keyboard_arrow_up</i></ng-template>
+</div>
+<ng-container *ngIf="NavItem.isOpen && NavItem.children && NavItem.children.length > 0" [@open]="NavItem.isOpen">
+    <app-nav-item *ngFor="let child of NavItem.children" [NavItem] = "child" class="child"></app-nav-item>
+</ng-container>
+</div>
